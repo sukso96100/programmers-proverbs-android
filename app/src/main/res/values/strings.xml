@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Programmer\'s Proverbs</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="placeholder.proverb">Simpler code has less bugs.</string>
+    <string name="share">Share</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+</resources>

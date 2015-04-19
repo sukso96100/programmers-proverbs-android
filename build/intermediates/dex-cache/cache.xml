@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.4/a607b0e12d2de769dc219e00b60a9b3d9e730d/rxjava-1.0.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="00a607b0e12d2de769dc219e00b60a9b3d9e730d">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/rxjava-1.0.4-aede4285911486eaaa7fa70a6aa40167906a68a8.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/classes-fd711802d0e64986aecc1b774c5785af7be228a6.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.3.0/1b355f73402020c5a0dcca58affc3ec3dfeabac1/okio-1.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1b355f73402020c5a0dcca58affc3ec3dfeabac1">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/okio-1.3.0-53f4f3afa3869097d7084e8315a3bbaa54b53914.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-7cac50140ae91510e7cb2b84e5e04c81c9db246b.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.3.0/2e7bc7033dc2c8423e661224171b3133fb155b28/okhttp-2.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2e7bc7033dc2c8423e661224171b3133fb155b28">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/okhttp-2.3.0-f6c576c34c32a3816ab437062d295259018f122a.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/io.reactivex/rxandroid/0.24.0/42dab493b8f74b164e082f281480c9d493ff89da/rxandroid-0.24.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="42dab493b8f74b164e082f281480c9d493ff89da">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/rxandroid-0.24.0-8ca71acf4190ac52e31c41dd1a60a775d2559ad0.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/classes-fff6a81d7c66a845862616f5430421d27e76c8e3.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/classes-d0963a939b5e04b413865fb8c40c476d1ecffd0b.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/youngbin/IdeaProjects/Programmer&apos;sProverbs/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-aeb38ee984947a43c5df37b3eb4ec260de7f9768.jar" />
+    </item>
+
+</items>
