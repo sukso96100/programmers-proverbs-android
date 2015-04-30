@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences SP = getSharedPreferences("pref", MODE_PRIVATE);
 
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        getSupportActionBar().setElevation(0);
 
         CardView CV = (CardView)findViewById(R.id.cardview);
         TV = (TextView)findViewById(R.id.textView);
@@ -95,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        if(id==R.id.action_settings){
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+        }
 
 
         return super.onOptionsItemSelected(item);

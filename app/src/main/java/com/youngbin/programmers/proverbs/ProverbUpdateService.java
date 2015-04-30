@@ -1,11 +1,14 @@
 package com.youngbin.programmers.proverbs;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.IBinder;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import com.squareup.okhttp.*;
 
@@ -15,6 +18,7 @@ public class ProverbUpdateService extends Service {
     private RxBus rxBus;
     Context mContext;
     ApplicationClass AC;
+    boolean notify;
     public ProverbUpdateService() {
     }
 
@@ -22,6 +26,12 @@ public class ProverbUpdateService extends Service {
     public IBinder onBind(Intent intent) {
         // TODO: Return the communication channel to the service.
         throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId){
+        notify = intent.getBooleanExtra("notify",false);
+        return START_STICKY;
     }
 
     @Override
@@ -58,9 +68,23 @@ public class ProverbUpdateService extends Service {
                 Log.d("RxBus", "Event Posted");
                 SPEDIT.putString("proverb", proverb);
                 SPEDIT.commit();
-                Intent intent = new Intent(ProverbUpdateService.this, ProverbsWidget.class);
+                Intent intent = new Intent(mContext, ProverbsWidget.class);
                 intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
                 sendBroadcast(intent);
+
+                if(notify){
+                    Intent intent1 = new Intent(mContext, MainActivity.class);
+                    PendingIntent PI = PendingIntent.getActivity(mContext,1,intent1,0);
+
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(mContext)
+                            .setContentTitle(mContext.getResources().getString(R.string.app_name))
+                            .setContentText(proverb)
+                            .setContentIntent(PI)
+                            .setSmallIcon(R.drawable.ic_proverb);
+                    NotificationManager notificationManager =
+                            (NotificationManager)mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+                    notificationManager.notify(0,builder.build());
+                }
                 stopSelf();
             }
         });

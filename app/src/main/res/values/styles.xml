@@ -5,10 +5,6 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#ffffff</item>
         <item name="colorPrimaryDark">#ffdbdbdb</item>
-    </style>
-    <style name="AppTheme.NoToolBar" parent="@style/AppTheme">
-        <!-- Customize your theme here. -->
-        <item name="windowActionBar">false</item>
-    </style>
+	</style>
 
 </resources>

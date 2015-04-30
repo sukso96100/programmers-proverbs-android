@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Programmer\'s Proverbs</string>
+	<string name="action_settings">설정</string>
+	<string name="add_widget">위젯 추가</string>
+	<string name="auto_update">속담 자동 업데이트</string>
+	<string name="auto_update_sub">매일 아침마다 속담 업데이트</string>
+	<string name="get_src">소스 얻기</string>
+	<string name="get_src_sub">GitHub 에서 소스코드 얻기</string>
+	<string name="share">공유</string>
+	<string name="title_activity_settings">설정</string>
+	<string name="web">웹사이트 방문</string>
+</resources>

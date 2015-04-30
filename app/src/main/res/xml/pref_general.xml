@@ -1,0 +1,25 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<Preference
+			android:key="ver"
+			android:title="@string/version"
+			android:summary="@string/version"/>
+
+	<CheckBoxPreference
+			android:key="auto_update"
+			android:title="@string/auto_update"
+			android:summary="@string/auto_update_sub"
+			android:defaultValue="true" />
+
+	<Preference
+			android:key="src"
+			android:title="@string/get_src"
+			android:summary="@string/get_src_sub"/>
+
+	<Preference
+			android:key="web"
+			android:title="@string/web"
+			android:summary="@string/web_sub"/>
+
+
+</PreferenceScreen>
