@@ -30,5 +30,15 @@
 
 
   </FrameLayout>
-
+	<android.support.design.widget.FloatingActionButton
+			android:id="@+id/fab_1"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			app:backgroundTint="#fffffb00"
+			android:layout_marginTop="-80dp"
+			android:layout_marginRight="20dp"
+			android:elevation="8dp"
+			android:layout_gravity="right"
+			android:src="@drawable/ic_settings_black_48dp"
+			/>
 </LinearLayout>
