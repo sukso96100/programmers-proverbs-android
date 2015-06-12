@@ -16,6 +16,13 @@
         <dex dex="/home/youngbin/AndroidProjects/programmers-proverbs-android/app/build/intermediates/pre-dexed/debug/classes-e375b70b139f22f97f5adde53a1bb93ada647755.jar" />
     </item>
     <item
+        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/io.realm/realm-android/0.80.0/fb7d6789b8c840759e13888372559b7741a2bae1/realm-android-0.80.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fb7d6789b8c840759e13888372559b7741a2bae1">
+        <dex dex="/home/youngbin/AndroidProjects/programmers-proverbs-android/app/build/intermediates/pre-dexed/debug/realm-android-0.80.0-4f3e126a95c0584682096000403733dee7789e6d.jar" />
+    </item>
+    <item
         jar="/home/youngbin/AndroidProjects/programmers-proverbs-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
         jumboMode="false"
         revision="22.0.1"

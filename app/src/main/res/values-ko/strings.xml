@@ -10,4 +10,5 @@
 	<string name="share">공유</string>
 	<string name="title_activity_settings">설정</string>
 	<string name="web">웹사이트 방문</string>
+	<string name="title_activity_favorites">즐겨찾기</string>
 </resources>

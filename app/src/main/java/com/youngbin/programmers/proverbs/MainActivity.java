@@ -2,6 +2,7 @@ package com.youngbin.programmers.proverbs;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.MenuItemCompat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.youngbin.programmers.proverbs.data.Favorites;
 import rx.functions.Action1;
 
 
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         CardView CV = (CardView)findViewById(R.id.cardview);
         TV = (TextView)findViewById(R.id.textView);
 
-        TV.setText(SP.getString("proverb","Small bug becomes a huge problem"));
+        TV.setText(SP.getString("proverb", "Small bug becomes a huge problem"));
         Proverb = SP.getString("proverb","Small bug becomes a huge problem");
         CV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +49,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final FloatingActionButton FAB = (FloatingActionButton)findViewById(R.id.fab);
+
+
+        final Favorites Fav = new Favorites(MainActivity.this);
+        if(Fav.isStarred((String) TV.getText())){
+            FAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_white_48dp));
+        }else{
+            FAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_border_white_48dp));
+        }
+
+        FAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Short Click", Toast.LENGTH_LONG).show();
+                Fav.addToOrRemoveFromFavorite((String) TV.getText());
+                if(Fav.isStarred((String) TV.getText())){
+                    FAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_white_48dp));
+                }else{
+                    FAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_border_white_48dp));
+                }
+            }
+        });
+        FAB.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startActivity(new Intent(MainActivity.this, FavoritesActivity.class));
+                return false;
+            }
+        });
         rxBus.toObserverable()
                 .subscribe(new Action1<Object>() {
                     @Override
@@ -59,12 +91,19 @@ public class MainActivity extends AppCompatActivity {
                                     TV.setText(event.toString());
                                     Proverb = event.toString();
                                     mShareActionProvider.setShareIntent(createShareIntent());
+                                    if(Fav.isStarred((String) TV.getText())){
+                                        FAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_white_48dp));
+                                    }else{
+                                        FAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_border_white_48dp));
+                                    }
                                 }
                             });
 
                         }
                     }
                 });
+
+
     }
 
 
