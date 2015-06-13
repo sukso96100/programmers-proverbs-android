@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         FAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Short Click", Toast.LENGTH_LONG).show();
+//                Toast.makeText(MainActivity.this, "Short Click", Toast.LENGTH_LONG).show();
                 Fav.addToOrRemoveFromFavorite((String) TV.getText());
                 if(Fav.isStarred((String) TV.getText())){
                     FAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_star_white_48dp));
