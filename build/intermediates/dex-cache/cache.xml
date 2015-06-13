@@ -16,18 +16,18 @@
         <dex dex="/home/youngbin/IdeaProjects/programmers-proverbs-android/app/build/intermediates/pre-dexed/debug/realm-android-0.80.0-4f3e126a95c0584682096000403733dee7789e6d.jar" />
     </item>
     <item
-        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.4/a607b0e12d2de769dc219e00b60a9b3d9e730d/rxjava-1.0.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="00a607b0e12d2de769dc219e00b60a9b3d9e730d">
-        <dex dex="/home/youngbin/IdeaProjects/programmers-proverbs-android/app/build/intermediates/pre-dexed/debug/rxjava-1.0.4-aede4285911486eaaa7fa70a6aa40167906a68a8.jar" />
-    </item>
-    <item
         jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.3.0/1b355f73402020c5a0dcca58affc3ec3dfeabac1/okio-1.3.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="1b355f73402020c5a0dcca58affc3ec3dfeabac1">
         <dex dex="/home/youngbin/IdeaProjects/programmers-proverbs-android/app/build/intermediates/pre-dexed/debug/okio-1.3.0-53f4f3afa3869097d7084e8315a3bbaa54b53914.jar" />
+    </item>
+    <item
+        jar="/home/youngbin/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.4/a607b0e12d2de769dc219e00b60a9b3d9e730d/rxjava-1.0.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="00a607b0e12d2de769dc219e00b60a9b3d9e730d">
+        <dex dex="/home/youngbin/IdeaProjects/programmers-proverbs-android/app/build/intermediates/pre-dexed/debug/rxjava-1.0.4-aede4285911486eaaa7fa70a6aa40167906a68a8.jar" />
     </item>
     <item
         jar="/home/youngbin/IdeaProjects/programmers-proverbs-android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.1.1/classes.jar"
