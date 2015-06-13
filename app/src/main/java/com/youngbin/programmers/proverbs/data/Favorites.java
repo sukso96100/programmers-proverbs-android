@@ -6,6 +6,8 @@ import io.realm.Realm;
 import io.realm.RealmObject;
 import io.realm.RealmResults;
 
+import java.util.ArrayList;
+
 /**
  * Created by youngbin on 15. 6. 13.
  */
@@ -44,6 +46,28 @@ public class Favorites {
             Model realmModel = realm.copyToRealm(model);
 
             realm.commitTransaction();
+        }
+    }
+
+    public ArrayList<String> getAllFavorites(){
+        RealmResults<Model> RR = realm.where(Model.class).findAll();
+        ArrayList<String> FavList = new ArrayList<String>();
+        for(Model Fav : RR){
+            Log.d(TAG,Fav.getProverb());
+            FavList.add(Fav.getProverb());
+        }
+        return FavList;
+    }
+
+    public String getRandomFav(){
+        RealmResults<Model> RR = realm.where(Model.class).findAll();
+        if(RR.size()==0) {
+            return null;
+        }else{
+            int random = (int) (Math.random() * RR.size());
+            Log.d(TAG,"randomFav:"+random);
+            String RandomFav = RR.get(random).getProverb();
+            return RandomFav;
         }
     }
 }

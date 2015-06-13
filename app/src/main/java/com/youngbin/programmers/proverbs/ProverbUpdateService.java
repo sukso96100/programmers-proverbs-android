@@ -11,6 +11,7 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import com.squareup.okhttp.*;
+import com.youngbin.programmers.proverbs.data.Favorites;
 
 import java.io.IOException;
 
@@ -19,6 +20,8 @@ public class ProverbUpdateService extends Service {
     Context mContext;
     ApplicationClass AC;
     boolean notify;
+    SharedPreferences SP;
+    SharedPreferences.Editor SPEDIT;
     public ProverbUpdateService() {
     }
 
@@ -38,8 +41,8 @@ public class ProverbUpdateService extends Service {
     public void onCreate(){
         super.onCreate();
 
-        SharedPreferences SP = getSharedPreferences("pref",MODE_PRIVATE);
-        final SharedPreferences.Editor SPEDIT = SP.edit();
+        SP = getSharedPreferences("pref",MODE_PRIVATE);
+        SPEDIT = SP.edit();
 
         mContext = ProverbUpdateService.this;
         AC = (ApplicationClass)getApplicationContext();
@@ -55,7 +58,8 @@ public class ProverbUpdateService extends Service {
         call.enqueue(new Callback() {
             @Override public void onFailure(Request request, IOException e) {
                 Log.e("FAIL", "Failed to execute " + request, e);
-                stopSelf();
+                sendFromOffline();
+
             }
 
             @Override public void onResponse(Response response) throws IOException {
@@ -73,17 +77,7 @@ public class ProverbUpdateService extends Service {
                 sendBroadcast(intent);
 
                 if(notify){
-                    Intent intent1 = new Intent(mContext, MainActivity.class);
-                    PendingIntent PI = PendingIntent.getActivity(mContext,1,intent1,0);
-
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(mContext)
-                            .setContentTitle(mContext.getResources().getString(R.string.app_name))
-                            .setContentText(proverb)
-                            .setContentIntent(PI)
-                            .setSmallIcon(R.drawable.ic_proverb);
-                    NotificationManager notificationManager =
-                            (NotificationManager)mContext.getSystemService(Context.NOTIFICATION_SERVICE);
-                    notificationManager.notify(0,builder.build());
+                    buildAndShowNotification(proverb);
                 }
                 stopSelf();
             }
@@ -91,6 +85,37 @@ public class ProverbUpdateService extends Service {
 
 
 
+    }
+    public void sendFromOffline(){
+        Favorites Fav = new Favorites(mContext);
+        String randomFav = Fav.getRandomFav();
+        if(randomFav != null){
+            rxBus.send(randomFav);
+            Log.d("RxBus", "Event Posted");
+            SPEDIT.putString("proverb", randomFav);
+            SPEDIT.commit();
+            Intent intent = new Intent(mContext, ProverbsWidget.class);
+            intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+            sendBroadcast(intent);
+            if(notify){
+                buildAndShowNotification(randomFav);
+            }
+        }
+        stopSelf();
+    }
+
+    public void buildAndShowNotification(String proverb){
+        Intent intent1 = new Intent(mContext, MainActivity.class);
+        PendingIntent PI = PendingIntent.getActivity(mContext,1,intent1,0);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(mContext)
+                .setContentTitle(mContext.getResources().getString(R.string.app_name))
+                .setContentText(proverb)
+                .setContentIntent(PI)
+                .setSmallIcon(R.drawable.ic_proverb);
+        NotificationManager notificationManager =
+                (NotificationManager)mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0,builder.build());
     }
 
 }
